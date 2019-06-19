@@ -20,9 +20,12 @@ public class Account {
       * @param initialBalance 
       */
         public Account(double initialBalance,String givenUser)
-        {
+        {if (initialBalance>50){
             balance=initialBalance;
             user=givenUser;
+                    System.out.println("Account created");
+        }
+            else System.out.println("Initial balance must be greater than 50");
             //Note that the initial balance must be greater than 50.       
         }
 
@@ -62,6 +65,11 @@ public class Account {
      */
     public String getUser() {
         return user;
+    }
+    public double finalAmont(){
+        double ammount;
+        ammount=getBalance()+(getBalance()*getInterestRate())/100;
+        return ammount;
     }
     
     
